@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sher-e-Punjab Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #0d0d0d;
+      color: white;
+      padding: 40px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      background-color: #0a0a0a !important;
+      padding: 1rem 0;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      color: #fff;
+    }
+    .nav-link {
+      color: #fff !important;
+      margin: 0 15px;
+      font-weight: 500;
+      position: relative;
+    }
+    .nav-link.active,
+    .nav-link:hover {
+      color: #ff6f00 !important;
+    }
+    .nav-link.active::after,
+    .nav-link:hover::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #ff6f00;
+    }
+    .navbar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .navbar-right .btn {
+      background-color: #ff6f00;
+      border: none;
+      padding: 6px 14px;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    /* Menu Section */
+    .menu-container {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .menu-list {
+      flex: 1;
+      min-width: 280px;
+      max-width: 600px;
+    }
+    .menu-item {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+    .menu-item span {
+      float: right;
+      color: #ffcc00;
+    }
+    .menu-item small {
+      display: block;
+      color: #999;
+      font-size: 14px;
+    }
+    .menu-images {
+      flex: 1;
+      max-width: 600px;
+    }
+    .menu-images img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: #ffcc00;
+      margin: 40px 0 10px;
+      font-size: 28px;
+    }
+
+    .carousel-item img {
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      color: white;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card h5 {
+      color: #ffcc00;
+    }
+
+    .order-btn {
+      background-color: #ffcc00;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .order-btn:hover {
+      background-color: #e6b800;
+    }
+    .why-choose-us {
+  background: linear-gradient(135deg, #111 0%, #1c1c1c 100%);
+}
+
+.section-title {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #f8b400;
+}
+
+.choose-card {
+  background-color: #222;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.choose-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+}
+
+.choose-card h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.choose-card p {
+  color: #bbb;
+  font-size: 0.95rem;
+}
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Sher-E-Punjab</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#blogs">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+        </ul>
+        <div class="navbar-right search-btn-container">
+          <input id="search-box" type="text" class="form-control form-control-sm" placeholder="Search Menu..." style="width: 180px;" />
+          <button class="btn btn-sm btn-warning" id="search-btn">Search</button>
+          <button class="btn btn-sm btn-warning" data-bs-toggle="popover" title="Enquiry" data-bs-content="For any enquiries, feel free to reach out!">ENQUIRY</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+<section class="menu-container mt-5 pt-5">
+  <div class="menu-list">
+    <h2>This Week's Special Menu</h2>
+    <div class="menu-item">
+      Butter Chicken <span>₹999</span>
+      <small>Rich tomato gravy, cream, spices</small>
+    </div>
+    <div class="menu-item">
+      Paneer Tikka <span>₹799</span>
+      <small>Grilled paneer, spices, mint chutney</small>
+    </div>
+    <div class="menu-item">
+      Amritsari Kulcha <span>₹599</span>
+      <small>Stuffed bread, chole, onions</small>
+    </div>
+    <div class="menu-item">
+      Mutton Rogan Josh <span>₹1099</span>
+      <small>Kashmiri curry, tender mutton</small>
+    </div>
+    <div class="menu-item">
+      Rasmalai <span>₹399</span>
+      <small>Cottage cheese balls in cream</small>
+    </div>
+  </div>
+  <div class="menu-images d-flex justify-content-center">
+    <img src="https://images.pexels.com/photos/7625056/pexels-photo-7625056.jpeg?cs=srgb&dl=pexels-saveurssecretes-7625056.jpg&fm=jpg" alt="Special Menu" class="img-fluid">
+  </div>
+</section>
+  <div class="text-center mb-4">
+    <button type="button" class="btn btn-outline-light" data-bs-toggle="popover" title="Chef's Tip" data-bs-content="Pair this with our mango lassi for a delightful combo!">
+      See Chef's Tip
+    </button>
+  </div>
+  <h2 align="center">Vegetarian Dishes</h2>
+<div id="vegCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="https://www.cubesnjuliennes.com/wp-content/uploads/2019/11/Paneer-Butter-Masala-Recipe-1.jpg" class="card-img-top" alt="Paneer Butter Masala">
+              <div class="card-body">
+                <h5 class="card-title">Paneer Butter Masala - ₹849</h5>
+                <p class="card-text">Paneer cubes in a creamy tomato-based gravy</p>
+                <button class="btn btn-warning order-btn">Order Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="https://media.istockphoto.com/id/1250399530/photo/vegetarian-palak-paneer.jpg?s=612x612&w=0&k=20&c=19u_RlhrEBnvrZx75xtj0-hYUnkm5rIIINkdNhdWIQI=" class="card-img-top" alt="Palak Paneer">
+              <div class="card-body">
+                <h5 class="card-title">Palak Paneer - ₹999</h5>
+                <p class="card-text">Cottage cheese cubes in a rich spinach gravy</p>
+                <button class="btn btn-warning order-btn">Order Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="https://t3.ftcdn.net/jpg/05/71/39/70/360_F_571397021_VCMDNgIo7PuBnsztSQ5m2dUYc9Dxsy9a.jpg" class="card-img-top" alt="Gobi Manchurian">
+              <div class="card-body">
+                <h5 class="card-title">Gobi Manchurian - ₹799</h5>
+                <p class="card-text">Crispy cauliflower in a tangy Indo-Chinese sauce</p>
+                <button class="btn btn-warning order-btn">Order Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#vegCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#vegCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+  <h2 align="center">Non-Vegetarian Dishes</h2>
+  <div id="nonVegCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://t3.ftcdn.net/jpg/06/01/41/68/360_F_601416862_AfYdeefqT1kGqWTx1DZCsJZVzYIDFzPR.jpg" class="card-img-top" alt="Butter Chicken">
+                <div class="card-body">
+                  <h5 class="card-title">Butter Chicken - ₹849</h5>
+                  <p class="card-text">Creamy tomato-based chicken curry</p>
+                  <button class="btn btn-warning order-btn">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://www.cubesnjuliennes.com/wp-content/uploads/2019/11/Mutton-Curry.jpg" class="card-img-top" alt="Mutton Rogan Josh">
+                <div class="card-body">
+                  <h5 class="card-title">Mutton Rogan Josh - ₹999</h5>
+                  <p class="card-text">Kashmiri-style mutton curry</p>
+                  <button class="btn btn-warning order-btn">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://media.istockphoto.com/id/1363311536/photo/tandoori-chicken.jpg?s=612x612&w=0&k=20&c=h8sNMzT9SsJzFL8fxkw2icHEneneGsKXdyPckOvEzsk=" class="card-img-top" alt="Tandoori Chicken">
+                <div class="card-body">
+                  <h5 class="card-title">Tandoori Chicken - ₹799</h5>
+                  <p class="card-text">Char-grilled chicken with spices</p>
+                  <button class="btn btn-warning order-btn">Order Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#nonVegCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#nonVegCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+  <h2 align="center">Desserts</h2>
+  <div id="dessertCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://i.pinimg.com/736x/9b/85/25/9b8525d113a4b41160af3d7533a8efb9.jpg" class="card-img-top" alt="Gulab Jamun">
+                <div class="card-body">
+                  <h5 class="card-title">Gulab Jamun - ₹199</h5>
+                  <p class="card-text">Soft fried dough balls in syrup</p>
+                  <button class="btn btn-warning order-btn">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTozWurAEjSGdUxRrE6YURH3rchmMSdRR_3YQ&s" class="card-img-top" alt="Rasmalai">
+                <div class="card-body">
+                  <h5 class="card-title">Rasmalai - ₹249</h5>
+                  <p class="card-text">Soft cheese patties in sweet milk</p>
+                  <button class="btn btn-warning order-btn">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://i0.wp.com/onewholesomemeal.com/wp-content/uploads/2019/02/GUr-Waali-Kheer_Insta2.jpg?fit=864%2C1080&ssl=1" class="card-img-top" alt="Kheer">
+                <div class="card-body">
+                  <h5 class="card-title">Kheer - ₹179</h5>
+                  <p class="card-text">Traditional Indian rice pudding</p>
+                  <button class="btn btn-warning order-btn">Order Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#dessertCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#dessertCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+  <h2 align="center">Beverages</h2>
+  <div id="beverageCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://img-global.cpcdn.com/recipes/528fd3c2f295bb9b/680x482cq70/creamy-mango-lassi-recipe-main-photo.jpg" class="card-img-top" alt="Mango Lassi">
+                <div class="card-body">
+                  <h5 class="card-title">Mango Lassi - ₹129</h5>
+                  <p class="card-text">Sweet mango yogurt drink</p>
+                  <button class="btn btn-warning order-btn">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://media.istockphoto.com/id/1297483389/photo/masala-tea-chai.jpg?s=612x612&w=0&k=20&c=Pv-QROSSywNh_qzHIIjHJeJB7OT0ujrKQsSiTgOmJAs=" class="card-img-top" alt="Masala Chai">
+                <div class="card-body">
+                  <h5 class="card-title">Masala Chai - ₹99</h5>
+                  <p class="card-text">Spiced Indian tea</p>
+                  <button class="btn btn-warning order-btn">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://img.freepik.com/free-photo/honey-lemon-soda-beverage-photography_53876-32276.jpg" class="card-img-top" alt="Lemon Soda">
+                <div class="card-body">
+                  <h5 class="card-title">Lemon Soda - ₹89</h5>
+                  <p class="card-text">Refreshing fizzy drink</p>
+                  <button class="btn btn-warning order-btn">Order Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#beverageCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#beverageCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+  <section class="why-choose-us py-5 text-center text-white">
+    <div class="container">
+      <h2 class="mb-4 section-title">Why Choose Sher-E-Punjab?</h2>
+      <div class="row">
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="choose-card p-4 h-100 shadow">
+            <i class="fas fa-utensils fa-3x mb-3 text-warning"></i>
+            <h5>Authentic Flavors</h5>
+            <p>Experience the true essence of Punjabi cuisine made with traditional recipes and rich spices.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="choose-card p-4 h-100 shadow">
+            <i class="fas fa-star fa-3x mb-3 text-warning"></i>
+            <h5>Top-rated Service</h5>
+            <p>Our staff ensures prompt, courteous service for a delightful dining experience every time.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="choose-card p-4 h-100 shadow">
+            <i class="fas fa-seedling fa-3x mb-3 text-warning"></i>
+            <h5>Fresh Ingredients</h5>
+            <p>We prioritize quality by using fresh, locally-sourced ingredients in every dish we serve.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="choose-card p-4 h-100 shadow">
+            <i class="fas fa-map-marked-alt fa-3x mb-3 text-warning"></i>
+            <h5>Multiple Locations</h5>
+            <p>Find us easily at various locations, bringing authentic Punjabi taste closer to you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  <footer class="bg-black text-center text-white py-5">
+    <div class="container">
+      <h5 class="text-warning fw-bold mb-3">Sher-E-Punjab</h5>
+      
+      <div class="mb-3">
+        <a href="https://www.instagram.com/sher.e.punjab" target="_blank" class="text-white mx-3 fs-5">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/sherepunjab" target="_blank" class="text-white mx-3 fs-5">
+          <i class="bi bi-facebook"></i>
+        </a>
+        <a href="mailto:contact@sherepunjab.com" class="text-white mx-3 fs-5">
+          <i class="bi bi-envelope-fill"></i>
+        </a>
+      </div>
+  
+      <p class="text-white mb-0">&copy; 2025 Sher-E-Punjab. All rights reserved.</p>
+      <p class="mt-2 small">
+        <a href="#" class="text-warning text-decoration-none mx-2">Terms</a> |
+        <a href="#" class="text-warning text-decoration-none mx-2">Privacy Policy</a>
+      </p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header">
+        <h5 class="modal-title" id="orderModalLabel">Place Your Order</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="orderForm">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="customerName" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="customerName" required>
+          </div>
+          <div class="mb-3">
+            <label for="customerContact" class="form-label">Contact Number</label>
+            <input type="tel" class="form-control" id="customerContact" required>
+          </div>
+          <div class="mb-3">
+            <label for="dishName" class="form-label">Dish Name</label>
+            <input type="text" class="form-control" id="dishName" readonly>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-warning">Confirm Order</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1055">
+  <div id="orderToast" class="toast bg-success text-white align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        Order placed successfully!
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+<script>
+  const orderButtons = document.querySelectorAll('.order-btn');
+  const dishNameInput = document.getElementById('dishName');
+  const orderModal = new bootstrap.Modal(document.getElementById('orderModal'));
+  const toast = new bootstrap.Toast(document.getElementById('orderToast'));
+  orderButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const card = btn.closest('.card');
+      const title = card ? card.querySelector('.card-title')?.textContent : 'Custom Dish';
+      dishNameInput.value = title || '';
+      orderModal.show();
+    });
+  });
+  document.getElementById('orderForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    orderModal.hide();
+    toast.show();
+    this.reset();
+  });
+</script>
+</body>
+</html>
