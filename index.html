@@ -111,6 +111,25 @@
   height: 100%;
   cursor: pointer;
    }
+   .promo-section {
+      background-color: #ffeeba;
+      padding: 3rem 1rem;
+    }
+    .promo-section h2 {
+      font-weight: bold;
+      color: #d35400;
+    }
+    .promo-section p {
+      font-size: 1.1rem;
+    }
+    .promo-section .btn {
+      background-color: #ff6f00;
+      color: white;
+      font-weight: 600;
+    }
+    .promo-section .btn:hover {
+      background-color: #e65100;
+    }
 
 .menu-card:hover {
   transform: translateY(-8px);
@@ -174,7 +193,6 @@
         <ul class="navbar-nav mx-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="#blogs">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
         </ul>
@@ -185,6 +203,7 @@
         </div>
       </div>
     </div>
+  </nav>
   </nav>
   <section id="welcome" class="welcome-section text-white">
     <div class="container">
@@ -208,7 +227,6 @@
             <h3 class="fw-bold">TRADITIONAL & MODERN</h3>
             <p>Experience the fusion of tradition and innovation in every bite.</p>
             <a href="#" class="btn btn-custom" data-bs-toggle="tooltip" data-bs-placement="top" title="Click to read more about us">READ MORE</a>
-
           </div>
         </div>
         <div class="col-md-4">
@@ -216,6 +234,7 @@
         </div>
       </div>
     </div>
+    
   </section>
   <section id="menu" class="bg-light text-dark">
     <div class="container text-center mb-5">
@@ -251,6 +270,13 @@
     </div>
       </div>
     </div>
+    <section class="promo-section text-center">
+      <div class="container">
+        <h2>Limited Time Offer: 20% OFF on All Online Orders!</h2>
+        <p>Order your favorite dishes from the comfort of your home and get 20% off. Hurry, offer valid till Sunday night!</p>
+        <a href="menu.html" class="btn btn-glow">Order Now</a>
+      </div>
+    </section>
   </section>
   <section id="contact" class="bg-dark text-white">
     <div class="container text-center mb-5">
@@ -314,6 +340,25 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+    $(document).ready(function() {
+      var menuItems = [
+        'Mango Lassi',
+        'Palak Paneer',
+        'Gulab Jamun',
+        'Masala Chai',
+        'Paneer Butter Masala',
+        'Tandoori Chicken',
+        'Butter Naan',
+        'Lassi'
+      ];
+      $('#search-box').typeahead({
+        source: menuItems
+      });
+
+      $('#search-btn').click(function() {
+        alert('Searching for: ' + $('#search-box').val());
+      });
+    });
   document.getElementById("contact-form").addEventListener("submit", function (event) {
     const email = document.getElementById("email").value;
     const emailAlert = document.getElementById("email-alert");
